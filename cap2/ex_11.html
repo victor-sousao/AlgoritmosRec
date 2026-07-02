@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex11</title>
+</head>
+<body>
+    <h1>Exercício 11</h1>
+
+    <br>
+
+    <input type="text" placeholder="Insira sua frequência:" id="ipt_frequencia">
+    <br>
+
+    <button onclick="analisarFrequencia()">Analisar frequência</button>
+
+    <br>
+    <div id="resultado"></div>
+</body>
+<script>
+    function analisarFrequencia(){
+        let frequencia = Number(ipt_frequencia.value)
+
+        if (frequencia >= 50){
+            resultado.innerHTML = `<img src="https://s.calendarr.com/upload/datas/di/at/dia-turista_c.jpg">`
+        } else {
+            resultado.innerHTML = `<img src="https://static.vecteezy.com/ti/fotos-gratis/p2/71461689-idosos-estudioso-lendo-livro-dentro-biblioteca-educacao-conhecimento-sabedoria-conceito-foto.jpg">`
+        }
+    }
+</script>
+</html>

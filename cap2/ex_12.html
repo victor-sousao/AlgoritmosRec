@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex12</title>
+</head>
+<body>
+    <h1>Exercício 12</h1>
+
+    <input type="text" placeholder="Insira sua primeira nota:" id="ipt_nota1">
+    <br>
+    <input type="text" placeholder="Insira sua segunda nota:" id="ipt_nota2">
+    <br>
+    <button onclick="verificarSituacao()">Verificar situação</button>
+
+    <br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function verificarSituacao(){
+        let notaUm = Number(ipt_nota1.value)
+        let notaDois = Number(ipt_nota2.value)
+
+        let calcularMedia = (notaUm + notaDois) / 2
+
+        if (calcularMedia >= 6){
+            resultado.innerHTML = "Parabéns, aprovado!"
+        } else {
+            resultado.innerHTML = "Tente outra vez"
+        }
+    }
+    
+</script>
+</html>

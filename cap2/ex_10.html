@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex10</title>
+</head>
+<body>
+    <h1>Exercício 10</h1>
+
+    <input type="text" placeholder="Informe a quantidade de chocolates:" id="ipt_qtde_chocolates">
+
+    <br>
+
+    <button onclick="comprar()">Comprar</button>
+    <br>
+    <div id="resultado"></div>
+</body>
+<script>
+    function comprar(){
+        let qtdeChocolates = Number(ipt_qtde_chocolates.value)
+        
+        if (qtdeChocolates >= 6){
+            let precoChocolateTotal = qtdeChocolates * 2.50
+            resultado.innerHTML = `o valor da sua compra foi de R$ ${precoChocolateTotal}`
+        } else {
+            let precoChocolateTotal = qtdeChocolates * 3
+            resultado.innerHTML = `o valor da sua compra foi de R$ ${precoChocolateTotal}`
+        }
+    }
+</script>
+</html>

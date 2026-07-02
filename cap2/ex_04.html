@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex04</title>
+</head>
+<body>
+    <h1>Vamos de pizza?</h1>
+
+    <input type="text" placeholder="Insira o valor total de pizza:" id="ipt_valor_pizza">
+    <br>
+    <input type="text" placeholder="Insira a quantidade de amigos:" id="ipt_qtd_amigos">
+
+    <br>
+
+    <button onclick="racharPizza()">Rola a pizza?</button>
+
+    <br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function racharPizza(){
+        let valorPizza = Number(ipt_valor_pizza.value)
+        let qtdAmigos = Number(ipt_qtd_amigos.value)
+        let pizzaRachada = valorPizza / qtdAmigos
+
+        resultado.innerHTML = `Cada amigo vai pagar R$${pizzaRachada} pela pizza`
+
+        if (pizzaRachada > 20){
+            resultado.innerHTML += `<br>Deu ruim! Pizza muito cara!`
+        }
+    }
+</script>
+</html>

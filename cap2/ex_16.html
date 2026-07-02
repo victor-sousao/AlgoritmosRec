@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex16</title>
+</head>
+<body>
+    <h1>Exercício 16</h1>
+
+    <input type="text" placeholder="Informe o peso da criança:" id="ipt_peso_crianca">
+
+    <br>
+
+    <button onclick="verificarPeso()">Verificar peso</button>
+
+    <br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function verificarPeso(){
+        let pesoCrianca = Number(ipt_peso_crianca.value)
+
+        if (pesoCrianca < 13.5){
+            resultado.innerHTML = "Abaixo do peso"
+        } else if (pesoCrianca == 18.3){
+            resultado.innerHTML = "Peso perfeito"
+        } else if (pesoCrianca > 21.2){
+            resultado.innerHTML = "Acima do peso"
+        } else if (pesoCrianca <= 21.2){
+            resultado.innerHTML = "Peso na média"
+        }
+    }
+</script>
+</html>

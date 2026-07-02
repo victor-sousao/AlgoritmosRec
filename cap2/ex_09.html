@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex09</title>
+</head>
+<body>
+    <!-- vou colcoar titulos com o numero do exercicio, pois estou perdendo muito tempo pensando nos titulos-->
+    <h1>Exercício 09</h1>
+
+    <input type="text" placeholder="Insira o valor do seu saldo:" id="ipt_saldo">
+
+    <br>
+
+    <button onclick="verificarFinancas()">Verificar finanças</button>
+    <br>
+    <div id="resultado"></div>
+</body>
+<script>
+    function verificarFinancas(){
+        let saldo = Number(ipt_saldo.value)
+
+        if (saldo == 0){
+            resultado.innerHTML = `Conta zerada!`
+        } else if (saldo < 0){
+            resultado.innerHTML = `<span style="color: red;">Esta devendo!</span>`
+        } else {
+            resultado.innerHTML = `<span style="color: blue;">Saldo positivo! sorriso</span>`
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06</title>
+</head>
+<body>
+    <h1>Banco XPTO - Cheque especial</h1>
+
+    <input type="text" placeholder="Insira o saldo da sua conta:" id="ipt_saldo">
+    <br>
+    <input type="text" placeholder="Insira o valor do débito desejado:" id="ipt_valor">
+
+    <br>
+
+    <button onclick="analisarConta()">Analisar conta</button>
+
+    <br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function analisarConta(){
+        let saldo = Number(ipt_saldo.value)
+        let debitoDesejado = Number(ipt_valor.value) 
+
+        saldo -= debitoDesejado
+
+        if (saldo < 0){
+            resultado.innerHTML = `O saldo atual da conta corrente é <span style="color: red; font-weight: bold;">${saldo}</span>`
+        } else {
+            resultado.innerHTML = `O saldo atual da conta corrente é ${saldo}`
+        }
+
+    }
+</script>
+</html>

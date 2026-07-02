@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01</title>
+</head>
+<body>
+    <h1>Entrar na festa</h1>
+    <input type="text" id="ipt_usuario_idade" placeholder="Insira a sua idade:">
+
+    <br>
+
+    <button onclick="verificarIdade()">Ir para festa</button>
+</body>
+<script>
+
+    function verificarIdade(){
+        let idadeUsuario = Number(ipt_usuario_idade.value)
+    
+        if (idadeUsuario >= 18){
+            alert("#partiuFesta")
+        } else {
+            alert("Pedir permissão pro responsável")
+            alert("#partiuFesta")
+        }
+    }
+</script>
+</html>

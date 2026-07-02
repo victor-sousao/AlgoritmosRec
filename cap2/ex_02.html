@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+</head>
+<body>
+    <h1>Latinhas de refrigerante</h1>
+
+    <input type="text" placeholder="Insira quantas latinhas de rerfrigerante você toma por dia:" id="ipt_usuario_latinhas">
+
+    <br>
+
+    <button onclick="calcularRefris()">Quantos refris?</button>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function calcularRefris(){
+        let latinasDiariasUsuario = Number(ipt_usuario_latinhas.value)
+        let qtdRefriAnual = latinasDiariasUsuario * 365
+
+        resultado.innerHTML = `Você consome ${qtdRefriAnual} latinhas de refri por ano!`
+
+        if (qtdRefriAnual >= 500){
+            resultado.innerHTML += `<br> Cuidado com as diabetes!` 
+        }
+    }
+</script>
+</html>
