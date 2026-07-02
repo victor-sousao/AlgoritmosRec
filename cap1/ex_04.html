@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex04</title>
+</head>
+<body>
+    <h1>Peso e altura</h1>
+
+    <input type="text" id="ipt_peso_usuario" placeholder="Informe seu peso em kilogramas:">
+    <br>
+    <input type="text" id="ipt_altura_usuario" placeholder="Informe sua altura:">
+    <br>
+    <button onclick="calcular()">Fale comigo</button>
+</body>
+<script>
+    function calcular(){
+        let peso = ipt_peso_usuario.value
+        let altura = ipt_altura_usuario.value
+
+        alert(`Você pesa ${peso} e tem ${altura} de altura`)
+    }
+</script>
+</html>

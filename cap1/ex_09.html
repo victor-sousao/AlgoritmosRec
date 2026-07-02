@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex09</title>
+</head>
+<body>
+    <h1>Calcular economia com bilhete único</h1>
+
+    <input type="text" placeholder="Inisra o valor da passagem inteira:" id="ipt_valor_passagem">
+    <br>
+    <input type="text" placeholder="Insira a quantidade de viagens que você fará por mês:" id="ipt_qtd_viagens_mes">
+    <button onclick="economizar()">Ver economia</button>
+</body>
+<script>
+    function economizar(){
+        let valorPassagem = Number(ipt_valor_passagem.value)
+        let qtdPassagem = Number(ipt_qtd_viagens_mes.value)
+        let valorEconomizado = (valorPassagem * qtdPassagem) / 2
+
+        alert(`Você economizará R$${valorTotalEstudantil} por mês`)
+    }
+</script>
+</html>

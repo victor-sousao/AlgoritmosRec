@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05</title>
+</head>
+<body>
+    <h1>Qual time você torce?</h1>
+
+    <input type="text" placeholder="Insira o time que você torce:" id="ipt_usuario_time">
+    <br>
+    <input type="text" placeholder="Insira a quantidade de títulos do seu time:" id="ipt_usuario_time_titulos">
+    <button onclick="amar()">Amo meu time</button>
+
+    <br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function amar(){
+        let time_usuario = ipt_usuario_time.value
+        let time_usuario_titulos = ipt_usuario_time_titulos.value
+
+        alert(`O time ${time_usuario} tem ${time_usuario_titulos} títulos`)
+    }
+</script>
+</html>

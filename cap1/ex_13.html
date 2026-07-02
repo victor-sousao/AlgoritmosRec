@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex13</title>
+</head>
+<body>
+    <h1>Pix</h1>
+
+    <button onclick="receber()">Receber 100</button>
+    <br>
+    <button onclick="pagar()">Pagar 50</button>
+    <br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    let saldoUsuario = 0
+
+    function receber(){
+        saldoUsuario += 100
+
+        console.log(saldoUsuario)
+    }
+
+    function pagar(){
+        saldoUsuario -= 50
+
+        console.log(saldoUsuario)
+    }
+</script>
+</html>

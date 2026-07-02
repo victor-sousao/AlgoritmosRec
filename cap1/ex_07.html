@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07</title>
+</head>
+<body>
+    <h1>Aposentadoria</h1>
+
+    <input type="text" placeholder="Insira sua idade:" id="ipt_usuario_idade">
+
+    <br>
+
+    <button onclick="aposentarMulher()">Aposentadoria mulher</button>
+    <br>
+    <button onclick="aposentarHomem()">Aposentadoria homem</button>
+</body>
+<script>
+    function aposentarMulher(){
+        let idade_usuario = Number(ipt_usuario_idade.value)
+        let tempo_ate_aposentar = 60 - idade_usuario
+
+        if (idade_usuario < 60){
+            alert(`Falta ${tempo_ate_aposentar} anos para você se aposentar!`)
+        } else {
+            alert("Você já pode se aposentar!")
+        }
+    }
+
+    function aposentarHomem(){
+        let idade_usuario = Number(ipt_usuario_idade.value)
+        let tempo_ate_aposentar = 70 - idade_usuario
+
+        if (idade_usuario < 70){
+            alert(`Falta ${tempo_ate_aposentar} anos para você se aposentar!`)
+        } else {
+            alert("Você já pode se aposentar!")
+        }
+    }
+
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex08</title>
+</head>
+<body>
+    <h1>Rachador de pizzas para amigos</h1>
+
+    <input type="text" placeholder="Insira o valor da pizza em reais:" id="ipt_valor_pizza">
+
+    <br>
+
+    <input type="text" placeholder="Inisira a quantidade de amigos que vão pagar:" id="ipt_qtd_amigos">
+    <button onclick="rachar()">#lovePizza</button>
+</body>
+<script>
+    function rachar(){
+        let valorPizza = Number(ipt_valor_pizza.value)
+        let qtdAmigos = Number(ipt_qtd_amigos.value)
+        let calculoPizza = valorPizza / qtdAmigos
+
+        alert(`Cada um dos ${qtdAmigos} vai pagar R$${calculoPizza}`)
+    }
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06</title>
+</head>
+<body>
+    <h1>Nome da rua e o número da casa</h1>
+
+    <input type="text" id="ipt_usuario_rua" placeholder="Insira a rua/avenida/vila onde mora:">
+    <br>
+    <input type="text" id="ipt_usuario_numero" placeholder="Insira o número da sua casa:">
+    <button onclick="acharOndeMoro()">Onde eu moro</button>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function acharOndeMoro(){
+        let rua = ipt_usuario_rua.value
+        let numero_casa = ipt_usuario_numero.value
+
+        alert(`Seu logradouro é ${rua}`)
+        alert(`O número do seu logradouro é ${numero_casa}`)
+    }
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex12</title>
+</head>
+<body>
+    <h1>calcular IMC</h1>
+
+    <input type="text" placeholder="Insira o seu peso:" id="ipt_usuario_peso">
+    <br>
+    <input type="text" placeholder="Insira a sua altura:" id="ipt_usuario_altura">
+    <br>
+
+    <button onclick="calcularIMC()">Calcular IMC</button>
+
+    <br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function calcularIMC(){
+        let alturaUsuario = Number(ipt_usuario_altura.value)
+        let pesoUsuario = Number(ipt_usuario_peso.value)
+        let calculoIMC = pesoUsuario / (alturaUsuario * alturaUsuario)
+
+        resultado.innerHTML = `O seu IMC é de ${calculoIMC.toFixed(2)}`
+    }
+</script>
+</html>

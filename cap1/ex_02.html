@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+</head>
+<body>
+    <h1>Opiniões da nota</h1>
+
+    <input type="text" placeholder="Informe sua nota:" id="ipt_nota_neto">
+    
+    <br>
+
+    <button onclick="voOpinar()">Opinião da avó</button>
+    <button onclick="maeOpinar()">Opinião da mãe</button>
+
+    <br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function voOpinar(){
+        let nota_neto = Number(ipt_nota_neto.value)
+
+        resultado.innerHTML = `Muito bem, que neto inteligente, porque tirou ${nota_neto}` 
+    }
+
+    function maeOpinar(){
+        let nota_neto = ipt_nota_neto.value
+
+        resultado.innerHTML = `Não fez mais que tua obrigação com essa nota ${nota_neto}` 
+    }
+</script>
+</html>

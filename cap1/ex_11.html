@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex11</title>
+</head>
+
+<body>
+    <h1>Calculadora bem básica</h1>
+    <input type="text" placeholder="Insira um valor:" id="ipt_valor1">
+    <br>
+    <input type="text" placeholder="Insira um segundo valor:" id="ipt_valor2">
+    <br>
+    <button onclick="somar()">Somar</button>
+    <br>
+    <button onclick="subtrair()">Subtrair</button>
+    <br>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <br>
+    <button onclick="dividir()">Dividir</button>
+    
+    <br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function somar() {
+        let valorUm = Number(ipt_valor1.value)
+        let valorDois = Number(ipt_valor2.value)
+        let calculo = valorUm + valorDois
+
+        resultado.innerHTML = `A soma entre ${valorUm} e ${valorDois} é ${calculo}`
+    }
+
+    function subtrair() {
+        let valorUm = Number(ipt_valor1.value)
+        let valorDois = Number(ipt_valor2.value)
+        let calculo = valorUm - valorDois
+
+        resultado.innerHTML = `A diferença entre ${valorUm} e ${valorDois} é ${calculo}`
+    }
+
+    function multiplicar() {
+        let valorUm = Number(ipt_valor1.value)
+        let valorDois = Number(ipt_valor2.value)
+        let calculo = valorUm * valorDois
+
+        resultado.innerHTML = `O produto entre ${valorUm} e ${valorDois} é ${calculo}`
+    }
+
+    function dividir() {
+        let valorUm = Number(ipt_valor1.value)
+        let valorDois = Number(ipt_valor2.value)
+        let calculo = valorUm / valorDois
+
+        resultado.innerHTML = `A razão entre ${valorUm} e ${valorDois} é ${calculo}`
+    }
+</script>
+
+</html>

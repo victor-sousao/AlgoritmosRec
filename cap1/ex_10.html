@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex10</title>
+</head>
+<body>
+    <h1>Dragon ball</h1>
+
+    <input type="text" placeholder="Insira o nome de seu guerreiro:" id="ipt_nome_guerreiro">
+    <br>
+    <input type="text" placeholder="Insira o ki normal do guerreiro:" id="ipt_ki_guerreiro">
+    <button onclick="verKi()">Ver ki em cada forma</button>
+</body>
+<script>
+    function verKi(){
+        let nomeGuerreiro = ipt_nome_guerreiro.value
+        let kiGuerreiro = Number(ipt_ki_guerreiro.value)
+        let kiSS1 = kiGuerreiro * 50
+        let kiSS2 = kiGuerreiro * 100
+        
+        alert(`Seu guerreiro virou Super Sayajin 1, o KI dele é de ${kiSS1}`)
+
+        alert(`Seu guerreiro virou Super Sayajin 2, o KI dele é de ${kiSS2}`)
+    }
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex14</title>
+</head>
+<body>
+    <h1>Banco 2</h1>
+
+    <input type="text" placeholder="Insira o valor desejado:" id="ipt_usuario_valor">
+
+    <br>
+
+    <button onclick="depositar()">Depositar</button>
+    <br>
+    <button onclick="retirar()">Retirar</button>
+</body>
+<script>
+    let saldo = 0
+
+    function depositar(){
+        let valorUsuario = Number(ipt_usuario_valor.value)
+
+        saldo += valorUsuario
+
+        console.log(saldo)
+    }
+
+    function retirar(){
+        let valorUsuario = Number(ipt_usuario_valor.value)
+
+        if (saldo >= valorUsuario){
+            saldo -= valorUsuario
+        } else {
+            alert("Saldo insuficiente")
+        }
+
+        console.log(saldo)
+    }
+</script>
+</html>

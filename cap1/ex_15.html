@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex15</title>
+</head>
+<body>
+    <h1>Eleição</h1>
+
+    <input type="text" placeholder="Insira quantidade de votos do primeiro candidato:" id="ipt_votos_canditatoA">
+    <br>
+    <input type="text" placeholder="Insira quantidade de votos do segundo candidato:" id="ipt_votos_canditatoB">
+    <br>
+    <input type="text" placeholder="Insira quantidade de votos em branco:" id="ipt_votos_branco">
+    <br>
+    <input type="text" placeholder="Insira quantidade de votos nulo:" id="ipt_votos_nulo">
+    <br>
+    <button onclick="completarEleicao()">Resultado da Eleição</button>
+
+    <br>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function completarEleicao(){
+        let qtdVotosA = Number(ipt_votos_canditatoA.value)
+        let qtdVotosB = Number(ipt_votos_canditatoB.value)
+        let qtdVotosBranco = Number(ipt_votos_branco.value)
+        let qtdVotosNulo = Number(ipt_votos_nulo.value)
+        let totalVotos = qtdVotosA + qtdVotosB + qtdVotosBranco + qtdVotosNulo + qtdVotosBranco + qtdVotosNulo
+        let totalVotosInvalidos = qtdVotosBranco + qtdVotosNulo
+
+        resultado.innerHTML = `
+        <br>Total de votos: ${totalVotos}<br><br>
+
+        Candidato A: ${(qtdVotosA / totalVotos) * 100}% (${qtdVotosA} votos)<br><br>
+
+        Candidato B: ${(qtdVotosB / totalVotos) * 100}% (${qtdVotosB} votos)<br><br>
+
+        Inválidos: ${(totalVotosInvalidos / totalVotos) * 100}% (${totalVotosInvalidos} votos)`
+    }
+</script>
+</html>
