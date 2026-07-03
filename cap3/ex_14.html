@@ -1,11 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex14</title>
 </head>
+
 <body>
-    
+    <h1>Exercício 14</h1>
+
+    <input type="text" placeholder="Insira a sua nota:" id="ipt_nota_aluno">
+
+    <br>
+
+    <input type="text" placeholder="Insira a sua frequência:" id="ipt_frequencia_aluno">
+
+    <button onclick="analisarAluno()">Analisar aluno</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    function analisarAluno() {
+        let notaUsuario = Number(ipt_nota_aluno.value)
+        let frequenciaUsuario = Number(ipt_frequencia_aluno.value)
+        let mensagemNota = ""
+        let mensagemFrequencia = ""
+
+        if (notaUsuario >= 0 && notaUsuario <= 10){
+            mensagemNota = ""
+            if (notaUsuario < 6){
+                mensagemNota = "Aluno ficou abaixo da média"
+            } else if (notaUsuario <= 8){
+                mensagemNota = "Aluno ficou na média"
+            } else {
+                mensagemNota = "Aluno acima da média"
+            }
+        } else {
+            mensagemNota = ""
+            mensagemFrequencia = ""
+            alert("Onde já se viu nota <0 ou >10?!")
+            // Não consegui fazer o código sem utilizar o return, pois foi a unica forma que econtrei para parar o código quando a nota for invalida. O mesmo serve para a validação da frequência
+            return
+        }
+
+        if (frequenciaUsuario >= 0 && frequenciaUsuario <= 100){
+            mensagemFrequencia = ""
+            if (frequenciaUsuario >= 75){
+                mensagemFrequencia =  "Aluno aprovado por frequência"
+            } else {
+                mensagemFrequencia = "Aluno reprovado por frequência"
+            }
+        } else {
+            mensagemNota = ""
+            mensagemFrequencia = ""
+            alert("Onde já se viu frequência <0 ou >100?!")
+            return
+        }
+
+        resultado.innerHTML = `${mensagemNota}<br>${mensagemFrequencia}`
+    }
+</script>
+
 </html>

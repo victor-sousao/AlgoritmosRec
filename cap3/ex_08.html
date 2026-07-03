@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ex08</title>
+    <title>Ex08a</title>
 </head>
 <body>
-    
+    <h1>Exercício 08</h1>
+
+    <input type="text" placeholder="Insira o nome da fruta que chegou na mesa:" id="ipt_nome_fruta">
+
+    <br>
+
+    <button onclick="verificarFruta()">Vai comer?</button>
+
+
 </body>
+<script>
+    function verificarFruta() {
+        let nomeFruta = ipt_nome_fruta.value.toLowerCase()
+
+        if (nomeFruta == "abacaxi" || nomeFruta == "uva"){
+            alert(`Sim, vai comer ${nomeFruta}`)
+        } else {
+            alert(`A fruta ${nomeFruta} ela não come`)
+        }
+    } 
+</script>
 </html>

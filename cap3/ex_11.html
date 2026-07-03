@@ -6,6 +6,27 @@
     <title>Ex11</title>
 </head>
 <body>
-    
+    <h1>Exercício 11</h1>
+
+    <input type="text" placeholder="Insira a temperatura atual:" id="ipt_temperatura_atual">
+
+    <br>
+
+    <button onclick="analisarClima()">Analisar clima</button>
+
 </body>
+<script>
+    function analisarClima() {
+        let temperaturaAtual = Number(ipt_temperatura_atual.value)
+
+        if (temperaturaAtual < 21 || temperaturaAtual > 24) {
+            alert("Alerta de desconforto!")
+            if(temperaturaAtual < 21) {
+                alert("As pessoas vão ter hipotermia")
+            } else if (temperaturaAtual > 24){
+                alert("As pessoas vão derreter")
+            }
+        }
+    }
+</script>
 </html>

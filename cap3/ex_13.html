@@ -6,6 +6,33 @@
     <title>Ex13</title>
 </head>
 <body>
+    <h1>Exercício 13</h1>
+
+    <input type="text" placeholder="Informe seu usuário:" id="ipt_usuario_nome">
+    <br>
+    <input type="text" placeholder="Informe sua senha:" id="ipt_usuario_senha">
+    <br>
+    <input type="text" placeholder="Insira uma informação pessoal:" id="ipt_usuario_info">
+
+    <br>
+
+    <button onclick="autenticar()">Autenticar</button>
     
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    function autenticar() {
+        let usuarioNome = ipt_usuario_nome.value
+        let usuarioSenha = ipt_usuario_senha.value
+        let usuarioInfo = ipt_usuario_info.value.toLowerCase()
+
+        if (usuarioNome == "ana" && usuarioSenha == "braga" && (usuarioInfo == "1949" || usuarioInfo == "louro josé")) {
+            resultado.innerHTML = "Usuário autenticado"
+        } else {
+            resultado.innerHTML = "Falha na autenticação"
+        }
+    }
+</script>
 </html>
