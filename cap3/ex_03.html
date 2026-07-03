@@ -6,6 +6,25 @@
     <title>Ex03</title>
 </head>
 <body>
-    
+    <h1>Exercício 03</h1>
+
+    <input type="text" placeholder="Insira a sua nota:" id="ipt_nota_aluno">
+
+    <br>
+
+    <button onclick="avaliarAluno()">Avaliar aluno</button>
+
+    <br>
 </body>
+<script>
+    function avaliarAluno() {
+        let notaAluno = Number(ipt_nota_aluno.value)
+
+        if (notaAluno >= 0 && notaAluno <= 10) {
+            alert("Nota válida!")
+        } else {
+            alert("Onde já se viu nota menor que 0 e maior que 10?!")
+        }
+    }
+</script>
 </html>

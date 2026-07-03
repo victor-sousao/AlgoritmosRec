@@ -6,6 +6,39 @@
     <title>Ex07</title>
 </head>
 <body>
-    
+    <h1>Exercício 07</h1>
+
+    <input type="text" placeholder="Informe a quantidade de passagens quee desejja adquirir:" id="ipt_qtd_passagem">
+
+    <br>
+
+    <button onclick="comprar()">Comprar</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    function comprar() {
+        let qtdPassagem = Number(ipt_qtd_passagem.value)
+        let valorPassagem = 4.40
+        let desconto = 0
+
+        if (qtdPassagem >= 8 && qtdPassagem <= 50) {
+            if (qtdPassagem >= 8 && qtdPassagem <= 19){
+                desconto = 3
+            } else if (qtdPassagem >= 20 && qtdPassagem <= 49){
+                desconto = 5
+            } else if (qtdPassagem == 50){
+                desconto = 7
+            }
+            // Tive que pesquisar essa fórmula que transforma a procentagem do desconto no valor em si. Após isso eu realizo uma subtração com o apoio de outra variável
+            let valorDesconto = valorPassagem * (desconto / 100) 
+            let totalPagar = (valorPassagem - valorDesconto) * qtdPassagem
+
+            resultado.innerHTML = `Total a pagar: R$${totalPagar}`
+        }
+
+    }
+</script>
 </html>

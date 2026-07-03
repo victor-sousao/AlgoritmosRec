@@ -6,6 +6,25 @@
     <title>Ex01</title>
 </head>
 <body>
-    
+    <h1>Exercício 01</h1>
+
+    <input type="text" placeholder="Insira a temperatura atual:" id="ipt_temperatura_atual">
+
+    <br>
+
+    <button onclick="verSituacao()">Ver situação</button>
+
 </body>
+<script>
+    function verSituacao() {
+        let temperaturaAtual = Number(ipt_temperatura_atual.value)
+
+        if (temperaturaAtual >= 21 && temperaturaAtual <= 24) {
+            alert("Temperatura confortável :D")
+        } else {
+            alert("Temperatura DESCONFORTÁVEL :(")
+        }
+
+    }
+</script>
 </html>

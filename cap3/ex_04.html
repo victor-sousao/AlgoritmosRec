@@ -6,6 +6,27 @@
     <title>Ex04</title>
 </head>
 <body>
-    
+    <h1>Exercício 04</h1>
+
+    <input type="text" placeholder="Insira o seu horário comum para acessar a Netflix:" id="ipt_horario_acesso_netflix">
+
+    <br>
+
+    <button onclick="verRecomendação()">Ver recomendação</button>
+
+    <br>
+
+    <div id="div_resultado"></div>
 </body>
+<script>
+    function verRecomendação() {
+        let horarioAcessoNetflix = Number(ipt_horario_acesso_netflix.value)
+
+        if (horarioAcessoNetflix >= 19 && horarioAcessoNetflix <= 21) {
+            div_resultado.innerHTML = `Não é recomendável que você assista sua série favorita no horário ${horarioAcessoNetflix}!`
+        } else {
+            div_resultado.innerHTML = `O horário ${horarioAcessoNetflix} é adequado para assistir sua série favorita!`
+        }
+    }
+</script>
 </html>

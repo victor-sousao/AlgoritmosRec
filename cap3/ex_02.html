@@ -6,6 +6,24 @@
     <title>Ex02</title>
 </head>
 <body>
-    
+    <h1>Exercício 02</h1>
+
+    <input type="text" placeholder="Insira sua renda familiar:" id="ipt_renda_familiar">
+
+    <br>
+
+    <button onclick="verificarAjuda()">Verificar ajuda</button>
+
 </body>
+<script>
+    function verificarAjuda() {
+        let rendaFamiliar = Number(ipt_renda_familiar.value)
+
+        if (rendaFamiliar <= 1050) {
+            alert("Você terá direito!")
+        } else {
+            alert("Você NÃO terá direito")
+        }
+    } 
+</script>
 </html>

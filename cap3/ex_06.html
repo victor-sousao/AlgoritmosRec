@@ -6,6 +6,42 @@
     <title>Ex06</title>
 </head>
 <body>
+    <h1>Exercício 06</h1>
+
+    <label>Intervalo de altura para o processo seletivo:</label>
+    <input type="text" placeholder="Insira a altura mínima:" id="ipt_altura_minima">
+    <input type="text" placeholder="Insira a altura máxima:" id="ipt_altura_maxima">
+
+    <br>
+
+    <input type="text" placeholder="Insira o nome do candidato:" id="ipt_nome_candidato">
+    <br>
+    <input type="text" placeholder="Insira a altura do candidato:" id="ipt_altura_candidato">
+
+    <button onclick="verificarCandidato()">Verificar Candidato</button>
     
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    function verificarCandidato(){
+        let alturaMinima = Number(ipt_altura_minima.value)
+        let alturaMaxima = Number(ipt_altura_maxima.value)
+        let nomeCandidato = ipt_nome_candidato.value
+        let alturaCandidato = Number(ipt_altura_candidato.value)
+
+        // Não achei que essa validação faz sentido, afinal esse representaria 1 metro. Logo só anões não poderiam participar
+        if (alturaMinima > 1 && alturaMaxima > alturaMinima){
+            if (alturaCandidato >= alturaMinima && alturaCandidato <= alturaMaxima){
+                resultado.innerHTML += `<br>O candidato ${nomeCandidato}, com altura de ${alturaCandidato} metros, participará do processo de seleção de piloto`
+            } else {
+                resultado.innerHTML += `<br>Infelizmente, o candidato ${nomeCandidato}, com altura de ${alturaCandidato} metros, não atende os requisitos da seleção`
+            }
+        } else {
+            alert("Intervalo da altura de seleção é inválida! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial")
+        }
+    }
+</script>
 </html>
