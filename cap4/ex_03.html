@@ -8,5 +8,30 @@
 <body>
     <h1>Exercício 03</h1>
 
+    <button onclick="calcularNumeros()">Números cabalisticos</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    let numerosCabalisticos = [3,4,7,10,12]
+
+    function calcularNumeros(){
+        let listaFinal = []
+
+        for (let i = 0; i <= 30; i++){
+            let achouCabalistico = false
+            for (let j = 0; j < numerosCabalisticos.length; j++){
+                if (i == numerosCabalisticos[j]){
+                    achouCabalistico = true
+                }
+            }
+            if (achouCabalistico == false){
+                listaFinal.push(i)
+            }
+        }
+        resultado.innerHTML = listaFinal
+    }
+</script>
 </html>

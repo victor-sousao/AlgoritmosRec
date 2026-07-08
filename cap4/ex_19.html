@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex19</title>
 </head>
+
 <body>
     <h1>Exercício 19</h1>
 
+    <button onclick="calcularMultiplos()">Calcular!</button>
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    function calcularMultiplos() {
+        let mensagem = ``
+
+        for (let i = 1; i <= 100; i++) {
+            if (i % 5 == 0 && i % 3 == 0) {
+                mensagem += `FizzBuzz<br>`
+            } else if (i % 5 == 0) {
+                mensagem += `Buzz<br>`
+            } else if (i % 3 == 0) {
+                mensagem += `Fizz<br>`
+            } else {
+                mensagem += `${i}<br>`
+            }
+        }
+        resultado.innerHTML = mensagem
+    } 
+    
+</script>
+
 </html>

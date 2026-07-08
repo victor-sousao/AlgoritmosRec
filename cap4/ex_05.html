@@ -8,5 +8,32 @@
 <body>
     <h1>Exercício 05</h1>
 
+    <input type="text" placeholder="Insira um número entre 0 - 200:" id="ipt_usuario_numero">
+
+    <br>
+
+    <button onclick="calcularMultiplos()">Viva o 7</button>
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    function calcularMultiplos(){
+        let valorUsuario = Number(ipt_usuario_numero.value)
+        let mensagem = ``
+
+        if (valorUsuario >= 0 && valorUsuario <= 200){
+            for (let i = 0; i <= valorUsuario; i++){
+                if (i % 7 == 0){
+                    mensagem += `${i} é um dos multíplos 7 do número ${valorUsuario}<br>`
+                }
+            }
+            resultado.innerHTML = mensagem
+        } else {
+            resultado.innerHTML = "Valor do usuário inválido!"
+        }
+    }
+</script>
 </html>

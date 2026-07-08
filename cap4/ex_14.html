@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex14</title>
 </head>
+
 <body>
     <h1>Exercício 14</h1>
 
+    Insira valores de um Intervalo:
+    <br>
+    <input type="text" placeholder="Insira o valor máximo:" id="ipt_valor_max">
+
+    <br>
+
+    <input type="text" placeholder="Insira o valor mínimo:" id="ipt_valor_min">
+
+    <br>
+
+    <button onclick="calcularMultiplos()">Curto 3 e 5!</button>
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    function calcularMultiplos() {
+        let valorMax = Number(ipt_valor_max.value)
+        let valorMin = Number(ipt_valor_min.value)
+        let mensagem = ``
+
+        if (valorMax > valorMin) {
+            for (let i = valorMin; i <= valorMax; i++) {
+                if (i % 5 == 0 && i % 3 == 0) {
+                    mensagem += `${i} (É TRI!É PENTA!)<br>`
+                } else if (i % 5 == 0) {
+                    mensagem += `${i} (É PENTA!)<br>`
+                } else if (i % 3 == 0) {
+                    mensagem += `${i} (É TRI!)<br>`
+                } else {
+                    mensagem += `${i}<br>`
+                }
+            }
+        } else {
+        resultado.innerHTML = "Valores inválidos"
+    }
+        resultado.innerHTML = mensagem
+    } 
+    
+</script>
+
 </html>

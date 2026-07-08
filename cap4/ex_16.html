@@ -8,5 +8,28 @@
 <body>
     <h1>Exercício 16</h1>
 
+    <input type="text" placeholder="Informe quantos elefantes:" id="ipt_qtd_elefantes">
+
+    <br>
+
+    <button onclick="atazanarMedium()">Atazanar a médium</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    function atazanarMedium(){
+        let qtdElefantes = Number(ipt_qtd_elefantes.value)
+        let listaIncomodam = []
+        let mensagem = ``
+
+        for (let i = 2; i <= qtdElefantes; i++){
+            listaIncomodam.push(" incomodam")
+            mensagem += `1 elefante incomoda muita gente!<br>
+            ${i} elefantes ${listaIncomodam}, muito mais!<br><br>`
+        }
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>

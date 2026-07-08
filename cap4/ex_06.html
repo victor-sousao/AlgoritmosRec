@@ -8,5 +8,34 @@
 <body>
     <h1>Exercício 06</h1>
 
+    <input type="text" placeholder="Insira um valor:" id="ipt_usuario_valor">
+    
+    <br>
+
+    <input type="text" placeholder="Insira uma frase:" id="ipt_usuario_frase">
+
+    <br>
+
+    <button onclick="exibirFrases()">Papagaio</button>
 </body>
+<script>
+    function exibirFrases(){
+        let valorUsuario = Number(ipt_usuario_valor.value)
+        let fraseUsuario = ipt_usuario_frase.value
+        let lista = []
+        
+
+        for (let i = 0; i < valorUsuario; i++){
+            lista.push(valorUsuario)
+        }
+
+        let mensagem = `${lista}`
+
+        for (let i = 0; i < valorUsuario; i++){
+            alert(`${lista}`)
+        } 
+    }
+
+    // Essa foi a única forma que eu consegui fazer, porém o texto não ficou EXATAMENTE como o enunciado pede. Porém eu utilizei totalmente a minha lógica
+</script>
 </html>

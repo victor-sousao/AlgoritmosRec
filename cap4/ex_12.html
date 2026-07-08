@@ -8,5 +8,28 @@
 <body>
     <h1>Exercício 12</h1>
 
+    Quantas Coca-Colas você acha que já bebeu em sua vida?:
+    <br>
+    <input type="text" placeholder="Insira Ex: 22212" id="ipt_latinhas">
+
+    <br>
+
+    <button onclick="mostarLatinhas()">Ver a quantidade</button>
+    
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    function mostarLatinhas(){
+        let latinhasUsuario = Number(ipt_latinhas.value)
+        let mensagem = ``
+
+        for (let i = 1; i <= latinhasUsuario; i++){
+            mensagem += `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR8SnA4t-7UGf6wZauItrVr5jDSqoa7bYUlBM6CXWX1g&s=10" height="100px">`
+        }
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>

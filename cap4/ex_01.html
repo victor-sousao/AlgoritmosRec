@@ -8,5 +8,28 @@
 <body>
     <h1>Exercício 01</h1>
 
+    <input type="text" placeholder="Insira o nome de uma pessoa a quem você ama:" id="ipt_usuario_amor">
+
+    <br>
+
+    <input type="text" placeholder="Digite o número correspondente do tamanho do amor:" id="ipt_tamanho_amor">
+
+    <button onclick="expressarAmor()">Expressar amor</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    function expressarAmor(){
+        let nomePessoaAmor = ipt_usuario_amor.value
+        let numeroAmor = Number(ipt_tamanho_amor.value)
+        let mensagem = ``
+
+        for (let i = 0; i < numeroAmor; i++){
+           mensagem += `${i} - ${nomePessoaAmor}, eu te amo! Sempre lembre disso!<br>`
+        }
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>

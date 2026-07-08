@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex18</title>
 </head>
+
 <body>
     <h1>Exercício 18</h1>
 
+    Informe a quantidade de depósitos que você fez no banco:
+    <br>
+    <input type="text" placeholder="Ex: 2" id="ipt_qtd_deposito">
+    <br>
+    <br>
+    Informe o valor de cada depósito:
+    <br>
+    <input type="text" placeholder="Ex: 1234" id="ipt_valor_deposito">
+
+    <button onclick="acompanharGrana()">Acompanhar grana</button>
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    function acompanharGrana() {
+        let qtdDeposito = Number(ipt_qtd_deposito.value)
+        let valorDeposito = Number(ipt_valor_deposito.value)
+        let contador = 0
+        let bonus = 0
+        let totalGuardado = 0
+        let mensagem = ``
+
+        for (let i = 1; i <= qtdDeposito; i++) {
+            if (contador < 3) {
+                totalGuardado += valorDeposito + (valorDeposito * bonus / 100)
+                mensagem += `${i}◦ Mês: R$ ${totalGuardado}<br>`
+                contador++
+            } else if (contador == 3) {
+                contador = 1
+                bonus++
+                totalGuardado += valorDeposito + (valorDeposito * bonus / 100)
+                mensagem += `${i}◦ Mês: R$ ${totalGuardado}<br>`
+
+            }
+        }
+
+        mensagem += `<br><br>Total guardado: R$ ${totalGuardado}<br>`
+        resultado.innerHTML = mensagem
+    }   
+</script>
+
 </html>

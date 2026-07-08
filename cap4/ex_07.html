@@ -8,5 +8,37 @@
 <body>
     <h1>Exercício 07</h1>
 
+    <input type="text" placeholder="Insira o valor máximo:" id="ipt_usuario_max">
+    
+    <br>
+
+    <input type="text" placeholder="Insira o valor mínimo:" id="ipt_usuario_min">
+    
+    <br>
+
+    <button onclick="calcularPares()">S2 Pares</button>
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    function calcularPares(){
+        let valorMax = Number(ipt_usuario_max.value)
+        let valorMin = Number(ipt_usuario_min.value)
+        let mensagem = ``
+
+        if (valorMax > valorMin){
+            for (let i = valorMin; i <= valorMax; i++){
+                if (i % 2 == 0){
+                    mensagem += `${i}<br>`
+                }
+            }
+            resultado.innerHTML = mensagem
+        } else {
+            resultado.innerHTML = "Intervalo inválido"
+        }
+    }
+</script>
 </html>

@@ -8,5 +8,27 @@
 <body>
     <h1>Exercício 04</h1>
 
+    <input type="text" placeholder="Insira um número entre 20 - 200:" id="ipt_usuario_numero">
+
+    <br>
+
+    <button onclick="adorarMultiplos()">Adoro múltiplos de 5</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    function adorarMultiplos(){
+        let numeroUsuario = Number(ipt_usuario_numero.value)
+        let mensagem = ""
+
+        for (let i = 0; i <= numeroUsuario; i++){
+            if (i % 5 == 0){
+                mensagem += `<br>${i}`
+            }
+        }
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>

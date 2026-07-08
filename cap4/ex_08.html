@@ -8,5 +8,30 @@
 <body>
     <h1>Exercício 08</h1>
 
+    <input type="text" placeholder="Quantas voltas você deseja em uma corrida?:" id="ipt_voltas">
+    
+    <br>
+
+    <button onclick="inicarCorrida()">Inicar corrida!</button>
+
+    <br>
+    
+    <div id="resultado"></div>
+
 </body>
+<script>
+    function inicarCorrida(){
+        let voltasCorrida = Number(ipt_voltas.value)
+        let mensagem = ``
+
+         for (let i = 1; i <= voltasCorrida; i++){
+            if (!(i == voltasCorrida)){
+                mensagem += `Carro deu a ${i}◦ volta!<br>`
+            } else {
+                mensagem += `Corrida finalizada!`
+            }
+         }
+         resultado.innerHTML = mensagem
+    }
+</script>
 </html>

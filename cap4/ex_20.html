@@ -8,5 +8,39 @@
 <body>
     <h1>Exercício 20</h1>
 
+    <input type="text" placeholder="Insira a sua idade:" id="ipt_usuario_idade" oninput="descreverVida()">
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    function descreverVida(){
+        let usuarioIdade = Number(ipt_usuario_idade.value)
+        let mensagem = ``
+
+        for (let i = 0; i <= usuarioIdade; i++){
+            if (i >= 0 && i <= 4){
+                mensagem += `${i} anos(Primeira Infância)<br>`
+            } else if (i > 4 && i <= 6){
+                mensagem += `${i} anos(Pré-escolar)<br>`
+            } else if (i > 6 && i <= 10){
+                mensagem += `${i} anos(Segunda Infância)<br>`
+            } else if (i > 10 && i <= 18){
+                mensagem += `${i} anos(Adolescência)<br>`
+            } else if (i > 18 && i <= 50){
+                mensagem += `${i} anos(Adulto)<br>`
+            } else if (i > 50 && i <= 100){
+                mensagem += `${i} anos(Melhor idade)<br>`
+            } else if (i > 100){
+                mensagem += `${i} anos(Matusalém)<br>`  
+            }else {
+                mensagem += `Idade inválida!`
+            }
+        }
+        resultado.innerHTML = mensagem
+    }
+                
+</script>
 </html>

@@ -8,5 +8,39 @@
 <body>
     <h1>Exercício 10</h1>
 
+    <input type="text" placeholder="Insira a quantidade de pessoas que vão entrar no carro:" id="ipt_pessoas_carro">
+
+    <br>
+
+    <input type="text" placeholder="Insira a capacidade de pessoas do carro:" id="ipt_capacidade_carro">
+
+    <br>
+
+    <button onclick="calcularCarona()">#Partiu Carona</button>
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    function calcularCarona(){
+        let capacidadeCarro = Number(ipt_capacidade_carro.value)
+        let pessoasCarro = Number(ipt_pessoas_carro.value)
+        let mensagem = ``
+
+        for (let i = 1; i <= pessoasCarro; i++){
+            if (i <= capacidadeCarro){
+                if (i == 1){
+                    mensagem += `Entrou o 1◦ passageiro (que é o(a) motorista)<br>`
+                } else {
+                    mensagem += `Entrou o ${i}◦ passageiro<br>`
+                }
+            } else {
+                mensagem += `O ${i}◦ passageiro terá que esperar!<br>`
+            }
+        }
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>

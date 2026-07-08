@@ -8,5 +8,20 @@
 <body>
     <h1>Exercício 02</h1>
 
+    <button onclick="calcularPares()">S2 Pares</button>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    function calcularPares(){
+        let mensagem = ""
+
+        for (let i = 0; i <= 100; i++){ // Aqui eu percebi que se não existisse um mais igual ao 100 ele nem se quer chegaria a validar o número 100
+            if (i % 2 == 0){
+                mensagem += `${i}<br>`
+            }
+        }
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>

@@ -8,5 +8,41 @@
 <body>
     <h1>Exercício 09</h1>
 
+    Insira a tabuada desejada:
+    <br>
+    <input type="text" placeholder="Insira um valor de 2 - 9" id="ipt_tabuada">
+
+    <br>
+
+    <input type="text" placeholder="Insira o valor onde a tabuada finaliza:" id="ipt_final">
+    
+    <br>
+
+    <button onclick="verTabuada()">Ver Tabuada</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    function verTabuada(){
+        let valorTabuada = Number(ipt_tabuada.value)
+        let valorFinal = Number(ipt_final.value)
+        let mensagem = ``
+
+        if (valorTabuada >= 2 && valorTabuada <= 9){
+            for (let i = 1; i <= valorFinal; i++){
+                let resultadoValor = valorTabuada * i
+                if (i % 2 == 0){
+                    mensagem += `<span style=" color: red;">${valorTabuada} x ${i} = ${resultadoValor}</span><br><br>`
+                } else {
+                    mensagem += `<span style=" color: blue;">${valorTabuada} x ${i} = ${resultadoValor}</span><br><br>`
+                }
+            }
+            resultado.innerHTML = mensagem
+        } else {
+            resultado.innerHTML = "Valor da tabuada inválido"
+        }
+    }
+</script>
 </html>

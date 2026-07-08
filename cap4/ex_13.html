@@ -8,5 +8,30 @@
 <body>
     <h1>Exercício 13</h1>
 
+    Quantas xícara de café com leite você já tomou na vida?: 
+    <br>
+    <input type="text" placeholder="Ex:6677" id="ipt_usuario_xicaras">
+
+    <br>
+
+    <button onclick="verQtd()">Ver a quantidade</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    function verQtd(){
+        let xicarasUsuario = Number(ipt_usuario_xicaras.value)
+        let mensagem = ``
+
+        // Eu chumbei os valores, ou seja caso for necessário alterar a fórmula do café com leite, toda a lógica precisará de ajustes
+        for (let i = 1; i <= xicarasUsuario; i++){
+            mensagem += `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT52sYcxEIT23-OJSv7BRQNQfm4DRsn5nmw8ysE0SOk8w&s=10" alt="" height="100px">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUs_FduA4fU-MjRg8hgExLLyzaHzH1njUWwAd7Zzwdyg&s=10" alt="" height="100px">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUs_FduA4fU-MjRg8hgExLLyzaHzH1njUWwAd7Zzwdyg&s=10" alt="" height="100px"><br>`
+        }
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>
