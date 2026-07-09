@@ -8,5 +8,31 @@
 <body>
     <h1>Exercício 06</h1>
 
+    Insira o nome do filme abaixo:
+    <br>
+    <input type="text" placeholder="Nome do filme:" id="ipt_nome_filme">
+
+    <br>
+
+    <button onclick="cadastrarFilme()">Cadastrar</button>
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    var filmes = []
+
+    function cadastrarFilme(){
+        let nomeFilme = ipt_nome_filme.value
+        filmes.push(nomeFilme)
+        console.log(filmes)
+
+        for (let i = 0; i < filmes.length; i++){
+            resultado.innerHTML += `${i}<br>`
+        }     
+        
+    }
+</script>
 </html>
