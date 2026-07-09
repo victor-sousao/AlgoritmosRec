@@ -8,5 +8,31 @@
 <body>
     <h1>Exercício 08</h1>
 
+    Insira o nome de um aluno:
+    <br>
+    <input type="text" placeholder="Nome do aluno:" id="ipt_nome_aluno">
+
+    <br>
+
+    <button onclick="cadastrarAluno()">Cadastrar</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    var turma = []
+    function cadastrarAluno(){
+        let nomeAluno = ipt_nome_aluno.value
+        let mensagem = ``
+
+        turma.push(nomeAluno)
+        console.log(turma)
+
+        for (let i = 1; i <= turma.length; i++){
+            mensagem += `${turma[turma.length - i]}<br>`
+        }
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>

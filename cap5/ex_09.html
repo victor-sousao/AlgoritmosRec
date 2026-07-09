@@ -8,5 +8,49 @@
 <body>
     <h1>Exercício 09</h1>
 
+    Insira o nome do projeto:
+    <br>
+    <input type="text" placeholder="Nome do projeto:" id="ipt_projeto">
+
+    <br>
+
+    <button onclick="registrarProjeto()">Registrar projeto</button>
+
+    <br>
+    <button onclick="mostarProjetos()">Mostrar projetos</button>
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    var projetos = []
+    function registrarProjeto(){
+        let projetoUsuario = ipt_projeto.value
+        let mensagem = ``
+
+        projetos.push(projetoUsuario)
+        console.log(projetos)
+
+        if (projetos.length > 0 && projetos.length <= 4){
+            mensagem = `Júnior`
+        } else if (projetos.length <= 12){
+            mensagem = `Pleno`
+        } else if (projetos.length >= 13){
+            mensagem = `Sênior`
+        }
+
+        resultado.innerHTML = `<br>Você já fez ${projetos.length} projetos. Por isso você é um profissional ${mensagem}`
+    }
+
+    function mostarProjetos(){
+        let mensagem = ``
+
+        for (let i = 1; i <= projetos.length; i++){
+            mensagem += `<br>${projetos[projetos.length - i]}`
+        }
+
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>

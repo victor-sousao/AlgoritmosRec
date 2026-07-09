@@ -8,5 +8,65 @@
 <body>
     <h1>Exercício 16</h1>
 
+    Insira o nome de um produto:
+    <br>
+    <input type="text" placeholder="Nome do produto:" id="ipt_nome_produto">
+
+    <br>
+
+    Insira o preço do produto:
+    <br>
+    <input type="text" placeholder="Preço do produto" id="ipt_preco_produto">
+
+    <button onclick="cadastrarProduto()">Cadastrar</button>
+
+    <br>
+
+    <button onclick="relatarEstoque()">Relatório de estoque</button>
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    let produtos = []
+    let precosProduto = []
+    let somaPrecosProdutoVenda = 0
+
+
+    function cadastrarProduto(){
+        let precoProduto = Number(ipt_preco_produto.value)
+        let nomeProduto = ipt_nome_produto.value
+
+        produtos.push(nomeProduto)
+        precosProduto.push(precoProduto)
+        somaPrecosProdutoVenda += precoProduto * 1.25
+    }
+
+    function relatarEstoque(){
+        resultado.innerHTML = `Total de produtos: ${produtos.length} <br><br>`
+        let precoMaisCaro = precosProduto[0]
+        let precoMaisBarato = precosProduto[0]
+        let produtoMaisCaro = produtos[0]
+        let produtoMaisBarato = produtos[0]
+
+        for (let i = 0; i < produtos.length; i++){
+            resultado.innerHTML += `Produto ${i + 1}: ${produtos[i]}<br>
+            Preço de compra: R$${precosProduto[i]}. Vender por R$${precosProduto[i] * 1.25}<br><br>`
+            if (precosProduto[i] > precoMaisCaro){
+                precoMaisCaro = precosProduto[i]
+                produtoMaisCaro = produtos[i]
+            } else if (precosProduto[i] < precoMaisBarato){
+                precoMaisBarato = precosProduto[i]
+                produtoMaisBarato = produtos[i]
+            }
+        }
+        resultado.innerHTML += `<br>O produto mais caro: ${produtoMaisCaro}`
+        resultado.innerHTML += `<br>O produto mais barato: ${produtoMaisBarato}`
+        resultado.innerHTML += `<br>A soma de todos os preços é de: ${somaPrecosProdutoVenda}`
+        resultado.innerHTML += `<br>A média de preço de venda dos produtos é de: ${somaPrecosProdutoVenda / produtos.length}`
+        
+    }
+</script>
 </html>

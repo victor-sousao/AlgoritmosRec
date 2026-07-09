@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex13</title>
 </head>
+
 <body>
     <h1>Exercício 13</h1>
 
+    <select id="selecionar_resultado">
+        <option>Vitória</option>
+        <option>Empate</option>
+        <option>Derrota</option>
+    </select>
+
+    <button onclick="registrarJogo()">Registrar jogo</button>
+
+    <br>
+
+    Deseja ver o resultado de um jogo específico?:
+    <br>
+    <input type="text" placeholder="Qual jogo?Ex: 1" id="ipt_posicao_jogo" onkeyup="mostrarResultado()">
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    let todosJogos = []
+
+    function registrarJogo() {
+        let valorResultado = selecionar_resultado.value
+        let vitorias = 0
+        let empates = 0
+        let derrotas = 0
+
+        todosJogos.push(valorResultado)
+
+        console.log(todosJogos);
+
+        for (let i = 0; i < todosJogos.length; i++) {
+            if (todosJogos[i] == "Vitória") {
+                vitorias++
+            } else if (todosJogos[i] == "Derrota") {
+                derrotas++
+            } else if (todosJogos[i] == "Empate") {
+                empates++
+            }
+        }
+
+        resultado.innerHTML = `O time teve ${vitorias}, ${empates} empates, ${derrotas} derrotas<br><br>
+        Pontuação total: ${vitorias * 3 + empates} pontos<br><br>
+        Aproveitamento: ${( (vitorias * 3 + empates)) / (todosJogos.length * 3) * 100}%`
+    }
+
+    function mostrarResultado() {
+        let posicaoJogo = Number(ipt_posicao_jogo.value)
+
+        if (posicaoJogo <= todosJogos.length && posicaoJogo > 0){
+            resultado.innerHTML = `No ${posicaoJogo}º jogo, o time ${todosJogos[posicaoJogo - 1]}`
+        } else {
+            resultado.innerHTML = `Não foi cadastrado um ${posicaoJogo}º jogo`
+        }
+
+
+    }
+</script>
+
 </html>

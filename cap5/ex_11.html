@@ -8,5 +8,41 @@
 <body>
     <h1>Exercício 11</h1>
 
+    Insira o valor de um produto:
+    <br>
+    <input type="text" placeholder="Valor do produto:" id="ipt_valor_produto">
+    <br>
+    <button onclick="cadastrarProduto()">Cadastrar</button>
+
+    <br>
+
+    <button onclick="atualizarEstoque()">Atualizar estoque</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    var produtos = []
+    let valorListaProdutos = 0
+    
+    function cadastrarProduto(){
+        let valorProduto = Number(ipt_valor_produto.value)
+        valorListaProdutos += valorProduto
+        produtos.push(valorProduto)
+        console.log(produtos)
+    }
+
+    function atualizarEstoque(){
+        let mensagem = ``
+
+        for (let i = 1; i - 1 < produtos.length; i++){
+            mensagem += `${produtos[produtos.length - i]},`
+        }
+
+        mensagem += `<br><br>Você tem ${produtos.length} produtos cadastrados em estoque<br><br>Seu estoque vale R$${valorListaProdutos}`
+
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>

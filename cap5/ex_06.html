@@ -28,11 +28,7 @@
         let nomeFilme = ipt_nome_filme.value
         filmes.push(nomeFilme)
         console.log(filmes)
-
-        for (let i = 0; i < filmes.length; i++){
-            resultado.innerHTML += `${i}<br>`
-        }     
-        
+        resultado.innerHTML += `${filmes[filmes.length - 1]}<br>`       
     }
 </script>
 </html>

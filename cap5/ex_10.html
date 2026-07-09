@@ -3,10 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ex10</title>
+    <title>Ex09</title>
 </head>
 <body>
-    <h1>Exercício 10</h1>
+    <h1>Exercício 09</h1>
+
+    Insira as linhas de ônibus que você pegou na semana:
+    <br>
+    <input type="text" placeholder="Nome da linha de ônibus:" id="ipt_nome_linha">
+    <br>
+    <button onclick="registrarLinha()">Gravar busão</button>
+
+    <br>
+
+    <br>
+    <input type="text" placeholder="Pesquisar linha:" id="ipt_pesquisa">
+    <br>
+    <button onclick="mostrarLinhas()">Pesquisar</button>
+
+    <br>
+
+    <div id="resultado"></div>
 
 </body>
+<script>
+    var linhas = []
+    function registrarLinha(){
+        let linhaUsuario = ipt_nome_linha.value
+        let mensagem = ``
+
+        linhas.push(linhaUsuario)
+        console.log(linhas)
+
+        for (let i = 1; i <= linhas.length; i++){
+            mensagem += `${linhas[linhas.length - i]},`
+        }
+
+        resultado.innerHTML = `${mensagem}`
+    }
+
+    function mostrarLinhas(){
+        let pesquisaUsuario = ipt_pesquisa.value
+        let mensagem = ``
+        let qtdLinhasRepetidas = 0
+
+        for (let i = 0; i < linhas.length; i++){
+            if (pesquisaUsuario == linhas[i]){
+                qtdLinhasRepetidas++
+            }
+        }
+
+        if (linhas.includes(pesquisaUsuario)){
+            mensagem = `${linhas}<br>Você já pegou essa linha ${qtdLinhasRepetidas} vezes`
+        } else {
+            mensagem = `${linhas}<br>Você nunca pegou essa linha.`
+        }
+        resultado.innerHTML = mensagem
+    }
+</script>
 </html>

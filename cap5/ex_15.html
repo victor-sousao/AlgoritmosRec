@@ -8,5 +8,46 @@
 <body>
     <h1>Exercício 15</h1>
 
+    Insira o nome de um produto:
+    <br>
+    <input type="text" placeholder="Nome do produto:" id="ipt_nome_produto">
+
+    <br>
+
+    Insira o preço do produto:
+    <br>
+    <input type="text" placeholder="Preço do produto" id="ipt_preco_produto">
+
+    <button onclick="cadastrarProduto()">Cadastrar</button>
+
+    <br>
+
+    <button onclick="relatarEstoque()">Relatório de estoque</button>
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    let produtos = []
+    let precosProduto = []
+
+    function cadastrarProduto(){
+        let precoProduto = Number(ipt_preco_produto.value)
+        let nomeProduto = ipt_nome_produto.value
+
+        produtos.push(nomeProduto)
+        precosProduto.push(precoProduto)
+    }
+
+    function relatarEstoque(){
+        resultado.innerHTML = `Total de produtos: ${produtos.length} <br><br>`
+
+        for (let i = 0; i < produtos.length; i++){
+            resultado.innerHTML += `Produto ${i + 1}: ${produtos[i]}<br>
+            Preço de compra: R$${precosProduto[i]}. Vender por R$${precosProduto[i] * 1.25}<br><br>`
+        }
+    }
+</script>
 </html>
