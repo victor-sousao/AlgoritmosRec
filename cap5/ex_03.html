@@ -8,5 +8,42 @@
 <body>
     <h1>Exercício 03</h1>
 
+    Insira bairros onde você morou:
+    <br>
+    <input type="text" placeholder="Ex: Parque Oratório" id="ipt_bairro">
+    <button onclick="cadastrarBairro()">Cadastrar</button>
+
+    <br><br>
+
+    Insira qual bairro deseja relembrar:
+    <br>
+    <input type="text" placeholder="Ex: 2" id="ipt_numero">
+    <br>
+    <button onclick="relembrarMoradia()">Relembrar moradia</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    var bairros = []
+
+    function cadastrarBairro(){
+        let bairroUsuario = ipt_bairro.value
+        bairros.push(bairroUsuario)
+        console.log(bairros)
+    }
+
+    function relembrarMoradia(){
+        let numeroBairro = Number(ipt_numero.value)
+
+        if (bairros.length >= numeroBairro && numeroBairro > 0){
+            resultado.innerHTML = bairros[numeroBairro - 1]
+        } else {
+            resultado.innerHTML = `Você ainda não morou num ${numeroBairro}º bairro!`
+
+
+        }
+    }
+</script>
 </html>

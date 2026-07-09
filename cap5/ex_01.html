@@ -8,5 +8,38 @@
 <body>
     <h1>Exercício 01</h1>
 
+    Insira o nome de uma fruta
+    <br>
+    <input type="text" placeholder="Ex: Uva" id="ipt_fruta">
+
+    <br>
+
+    <button onclick="pesuisarFrutas()">Pesquisar</button>
+
+    <br>
+
+    <div id="resultado"></div>
+
 </body>
+<script>
+    var frutas = ["banana","uva","abacate","pera","manga","carambola",]
+
+    function pesuisarFrutas(){
+        let frutaPesquisa = ipt_fruta.value
+        let encontrouFruta = false
+
+        for (let i = 0; i < frutas.length; i++){
+            if (frutaPesquisa.toLowerCase() == frutas[i]){
+                encontrouFruta = true
+            }
+        }
+        if (encontrouFruta){
+            resultado.innerHTML = `A fruta ${frutaPesquisa} existe na lista <br>`
+        } else {
+            resultado.innerHTML = `Não existe a fruta ${frutaPesquisa} na lista <br>`
+        }
+
+        // Escolhi fazer dessa forma ao invés de utilizar o .includes()
+    }
+</script>
 </html>

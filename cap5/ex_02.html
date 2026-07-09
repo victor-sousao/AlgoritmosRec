@@ -8,5 +8,61 @@
 <body>
     <h1>Exercício 02</h1>
 
+    <input type="text" placeholder="Destino da viagem" id="ipt_destino">
+    <br>
+    <button onclick="adicionarViagem()">Adicionar</button>
+
+    <br><br>
+
+    <button onclick="primeiraViagem()">Primeira viagem</button>
+    <br>
+    <div id="resultado"></div>
+
+    <br><br>
+
+    <button onclick="terceiraViagem()">Terceira viagem</button>
+    <br>
+    <div id="resultado2"></div>
+
+    <br><br>
+
+    <button onclick="ultimaViagem()">Última viagem</button>
+    <br>
+    <div id="resultado3"></div>
 </body>
+<script>
+    var viagens = []
+
+    function adicionarViagem(){
+        let destinoViagem = ipt_destino.value
+        viagens.push(destinoViagem)
+        console.log(viagens)
+    }
+
+    function primeiraViagem(){
+        if (viagens.length == 0){
+            resultado.innerHTML = `Ainda não viajou` 
+        } else {
+            resultado.innerHTML = `${viagens[0]}<br>`
+        }
+    }
+
+    function terceiraViagem(){
+        if (viagens.length == 0){
+            resultado2.innerHTML = `Ainda não fez a terceira viagem` 
+        } else {
+            resultado2.innerHTML = `${viagens[2]}<br>`
+        }
+    }
+
+    function ultimaViagem(){
+        if (viagens.length == 0){
+            resultado3.innerHTML = `Ainda não viajou`
+        } else {
+            resultado3.innerHTML = `${viagens[viagens.length - 1]}<br>`
+        }
+    }
+
+
+</script>
 </html>

@@ -8,5 +8,32 @@
 <body>
     <h1>Exercício 04</h1>
 
+    Insira o nome de um filme
+    <br>
+    <input type="text" placeholder="Nome de um filme:" id="ipt_nome_filme">
+    <button onclick="cadastrarFilme()">Cadastrar filme</button>
+
+    <br><br>
+
+    <button onclick="verFilmes()">Ver favoritos</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    var filmes = []
+    function cadastrarFilme(){
+        let nomeFilme = ipt_nome_filme.value
+        filmes.push(nomeFilme)
+        console.log(filmes)        
+    }
+
+    function verFilmes(){
+        // O enunciado não pediu nenhuma validação para caso a lista esteja vazia
+        resultado.innerHTML = `${filmes}<br> Total: ${filmes.length}
+        <br><br>O filme que mais gosta é ${filmes[0]}
+        <br>E desses, o que menos gosta é ${filmes[filmes.length - 1]}`
+    }
+</script>
 </html>

@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ex05</title>
+    <title>Ex04</title>
 </head>
 <body>
-    <h1>Exercício 05</h1>
+    <h1>Exercício 04</h1>
 
+    Insira o nome de um filme
+    <br>
+    <input type="text" placeholder="Nome de um filme:" id="ipt_nome_filme">
+    <button onclick="cadastrarFilme()">Cadastrar filme</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    var filmes = []
+    function cadastrarFilme(){
+        let nomeFilme = ipt_nome_filme.value
+
+        filmes.push(nomeFilme)
+        console.log(filmes)
+
+        if (filmes[2] != undefined){
+            resultado.innerHTML = `<br> Total de filme favoritos: ${filmes.length}
+            <br><br>
+            Seu grande favorito: ${filmes[0]}
+            <br>
+            Seu 3º filme favorito: ${filmes[2]}
+            <br>
+            Seu último favorito: ${filmes[filmes.length - 1]}`
+        } else {
+            resultado.innerHTML = `<br> Total de filme favoritos: ${filmes.length}
+            <br><br>
+            Seu grande favorito: ${filmes[0]}
+            <br>
+            Seu 3º filme favorito: ${"Ainda não existe"}
+            <br>
+            Seu último favorito: ${filmes[filmes.length - 1]}`
+        }
+    }
+</script>
 </html>
