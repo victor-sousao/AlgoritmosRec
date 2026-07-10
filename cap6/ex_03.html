@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex03</title>
 </head>
+
 <body>
     <h1>Exercício 03</h1>
 
+    <button onclick="jogarPPT()">Jogar</button>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    let contador = 1
+    let jogadorUm = 0
+    let jogadorDois = 0
+
+    function jogarPPT() {
+
+        let max = 3
+        let min = 1
+        let numeroAleatorio = Math.floor(Math.random() * (max - min + 1) + min)
+
+        if (contador == 1) {
+            resultado.innerHTML = ""
+            descobrirJogada(numeroAleatorio)
+            jogadorUm = numeroAleatorio
+            contador = 2
+        } else if (contador == 2) {
+            descobrirJogada(numeroAleatorio)
+            jogadorDois = numeroAleatorio
+
+            if (jogadorUm == jogadorDois) {
+                resultado.innerHTML += `<br> EMPATE! Jogue novamente!`
+            } else if ((jogadorUm == 1 && jogadorDois == 3)) {
+                resultado.innerHTML += `<br> Jogador 1 venceu porque Pedra quebra a Tesoura`
+            } else if ((jogadorUm == 2 && jogadorDois == 1)) {
+                resultado.innerHTML += `<br> Jogador 1 venceu porque Papel cobre a Pedra`
+            } else if ((jogadorUm == 3 && jogadorDois == 2)) {
+                resultado.innerHTML += `<br> Jogador 1 venceu porque Tesoura corta o Papel`
+            } else if ((jogadorDois == 1 && jogadorUm == 3)) {
+                resultado.innerHTML += `<br> Jogador 2 venceu porque Pedra quebra a Tesoura`
+            } else if ((jogadorDois == 2 && jogadorUm == 1)) {
+                resultado.innerHTML += `<br> Jogador 2 venceu porque Papel cobre a Pedra`
+            } else if ((jogadorDois == 3 && jogadorUm == 2)) {
+                resultado.innerHTML += `<br> Jogador 2 venceu porque Tesoura corta o Papel`
+            }
+
+            contador = 3
+
+        } else if (contador == 3) {
+            resultado.innerHTML = "Jogo reiniciado"
+            contador = 1
+        }
+
+
+    }
+
+    function descobrirJogada(valor) {
+        if (valor == 1) {
+            resultado.innerHTML += `  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1WahFz1L0K_7iz7KA_dpnNyHCBzrP9X0iyNd5xsDDVA&s=10" height="100px">  `
+        } else if (valor == 2) {
+            resultado.innerHTML += `  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMTd2P8GILm8XRpf1u-q2Wcbc_bis2-hDFzPHdBAZIXw&s=10" height="100px">  `
+        } else if (valor == 3) {
+            resultado.innerHTML += `  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTui6x3hHiDJDhJxFsNotqXAcXnoFzytCFDY7GWZDgrOg&s=10" height="100px">  `
+        }
+    }
+</script>
+
 </html>

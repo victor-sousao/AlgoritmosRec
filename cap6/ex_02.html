@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ex02</title>
+    <title>Ex01</title>
 </head>
 <body>
-    <h1>Exercício 02</h1>
+    <h1>Exercício 01</h1>
 
+    <button onclick="verAvaliacao()">Avaliar</button>
+
+    <br>
+    <img src="" height="100px">
+    <div id="resultado"></div>
 </body>
+<script>
+    let contador = 0
+    let somaNotas = 0
+
+    function verAvaliacao(){
+        contador++
+
+        let max = 5
+        let min = 0
+        let numeroAleatorio = Math.random() * (max - min) + min
+        let mediaNotas = somaNotas / contador
+        somaNotas += numeroAleatorio
+
+        resultado.innerHTML = `Nota recebida: ${numeroAleatorio.toFixed(1)}<br><br>`
+        identificarNota(numeroAleatorio)
+
+        resultado.innerHTML += `<br>Média geral: ${mediaNotas.toFixed(1)}<br>`
+        identificarNota(mediaNotas)
+
+    }
+    
+    function identificarNota(valor){
+        if (valor <= 0.5){
+            resultado.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png" height="100px"><br>`
+        } else if (valor <= 1.5){
+            resultado.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png" height="100px"><br>`
+        } else if (valor <= 3.5){
+            resultado.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png" height="100px"><br>`
+        } else if (valor <= 4.5){
+            resultado.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png" height="100px"><br>`
+        } else if (valor > 4.5){
+            resultado.innerHTML += `<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png" height="100px"><br>`
+        }
+    }
+</script>
 </html>

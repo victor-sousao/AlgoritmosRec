@@ -8,5 +8,30 @@
 <body>
     <h1>Exercício 04</h1>
 
+    Insira o seu número da sorte:
+    <br>
+    <input type="text" placeholder="Entre 0 - 100:" id="ipt_numero">
+
+    <br>
+
+    <button onclick="sortearNumeros()">Valendo!</button>
+
 </body>
+<script>
+    let numeroAleatorio = 0
+    function sortearNumeros(){
+        let numeroSorte = Number(ipt_numero.value)
+        let max = 100
+        let min = 0
+        let contador = 0
+        
+        while (numeroAleatorio != numeroSorte){
+            numeroAleatorio = Math.floor(Math.random() * (max - min + 1) + min)
+            contador++
+            console.log(numeroAleatorio);
+        }
+
+        alert(`Foram necessários ${contador} sorteios`)
+    }
+</script>
 </html>

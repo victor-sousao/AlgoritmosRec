@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex05</title>
 </head>
+
 <body>
     <h1>Exercício 05</h1>
 
+    <h2>FIVE TURTLES</h2>
+
+    Insira o nome de 5 participantes
+    <br>
+    <input type="text" placeholder="Ex: Victor" id="ipt_nome_participante">
+
+    <br>
+
+    <button onclick="adicionarParticipante()">Adicionar participante</button>
+
+    <br><br>
+
+    Insira a distância da maratona:
+    <br>
+    <input type="text" placeholder="5 - 42 Km" id="ipt_tamanho_maratona">
+
+    <br>
+    <button onclick="darLargada()">dar a largada</button>
+    <br>
+
+    <div id="resultado"></div>
 </body>
+<script>
+    let corredores = []
+    function darLargada() {
+        let tamanhoCorrida = Number(ipt_tamanho_maratona.value)
+        let numeroAleatorio = 0
+
+        if (tamanhoCorrida <= 42 && tamanhoCorrida >= 5) {
+            for (let i = 0; i < tamanhoCorrida; i++) {
+                numeroAleatorio = Number(Math.random() * (max - min) + min).toFixed(1)
+            }
+        } else {
+            alert("Tamanho do percurso inválido")
+        }
+
+    }
+
+    function adicionarParticipante() {
+        let nomeParticipante = ipt_nome_participante.value
+
+        if (corredores <= 5) {
+            corredores.push(nomeParticipante)
+        } else {
+            alert("Corrida cheia!")
+        }
+    }
+
+</script>
 </html>
