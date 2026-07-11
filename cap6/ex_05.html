@@ -34,29 +34,102 @@
 </body>
 <script>
     let corredores = []
+    let tempoCorredores = []
+    let voltasCorredores = []
+
     function darLargada() {
         let tamanhoCorrida = Number(ipt_tamanho_maratona.value)
         let numeroAleatorio = 0
 
         if (tamanhoCorrida <= 42 && tamanhoCorrida >= 5) {
             for (let i = 0; i < tamanhoCorrida; i++) {
-                numeroAleatorio = Number(Math.random() * (max - min) + min).toFixed(1)
+                for (let j = 0; j < corredores.length; j++) {
+                    numeroAleatorio = Number((Math.random() * (6 - 4) + 4).toFixed(1))
+                    tempoCorredores[j] += numeroAleatorio
+                    voltasCorredores[j].push(numeroAleatorio)
+                }
+                console.log(tempoCorredores);
+
+                if (i == tamanhoCorrida - 1) {
+                    // Implementando o Bubble Sort que a giu me ensinou
+                    for (let j = 0; j < tempoCorredores.length; j++) {
+                        for (let v = 0; v < tempoCorredores.length - j - 1; v++) {
+                            if (tempoCorredores[v] > tempoCorredores[v + 1]) {
+                                let temp = tempoCorredores[v]
+                                let temp2 = corredores[v]
+                                let temp3 = voltasCorredores[v]
+                                tempoCorredores[v] = tempoCorredores[v + 1]
+                                corredores[v] = corredores[v + 1]
+                                voltasCorredores[v] = voltasCorredores[v + 1]
+                                tempoCorredores[v + 1] = temp
+                                corredores[v + 1] = temp2
+                                voltasCorredores[v + 1] = temp3
+                            }
+                        }
+
+                    }
+
+                    resultado.innerHTML = `Primeiro lugar: ${corredores[0]} - ${tempoCorredores[0]} min <br>
+                    Segundo lugar: ${corredores[1]} - ${tempoCorredores[1]} min <br>
+                    Terceiro lugar: ${corredores[2]} - ${tempoCorredores[2]} min`
+                } else {
+                    let menorTempoCorredor = tempoCorredores[0]
+                    let melhorCorredorVolta = corredores[0]
+                    // Descobre o melhor corredor
+                    for (let j = 0; j < tempoCorredores.length; j++) {
+                        if (tempoCorredores[j] < menorTempoCorredor) {
+                            menorTempoCorredor = tempoCorredores[j]
+                            melhorCorredorVolta = corredores[j]
+                        }
+                    }
+                    alert(`${melhorCorredorVolta} com ${i + 1} Kilometros percorridos em ${menorTempoCorredor} minutos. Parabéns!`)
+                }
+
+
             }
+            let piorVolta = voltasCorredores[0][0]
+            let melhorVolta = voltasCorredores[0][0]
+            let melhorCorredor = corredores[0]
+            let piorCorredor = corredores[0]
+            let melhorKm = 1
+            let piorKm = 1
+            
+            for (let i = 0; i < voltasCorredores.length; i++){
+                let tempoJogadorAcumulado = tempoCorredores[i]
+                for (let j = voltasCorredores[i].length - 1; j >= 0; j--){
+                    resultado.innerHTML += `<br>Corredor ${i}: ${corredores[i]}, Voltas(Inversa): ${voltasCorredores[i][j]}, Tempo acumulado: ${tempoJogadorAcumulado}`
+                    tempoJogadorAcumulado -= voltasCorredores[i][j]
+                    if (melhorVolta > voltasCorredores[i][j]){
+                        melhorVolta = voltasCorredores[i][j]
+                        melhorCorredor = corredores[i]
+                        melhorKm = j + 1
+                    }
+                    if (piorVolta < voltasCorredores[i][j]){
+                        piorVolta = voltasCorredores[i][j]
+                        piorCorredor = corredores[i]
+                        piorKm = j + 1
+                    }
+                }
+            }
+            resultado.innerHTML += `<br>Melhor volta: ${melhorCorredor}, Tempo: ${melhorVolta}, Km: ${melhorKm}`
+            resultado.innerHTML += `<br>Pior volta: ${piorCorredor}, Tempo: ${piorVolta}, Km: ${piorKm}`
         } else {
             alert("Tamanho do percurso inválido")
         }
-
     }
 
     function adicionarParticipante() {
         let nomeParticipante = ipt_nome_participante.value
 
-        if (corredores <= 5) {
+        if (corredores.length < 5) {
             corredores.push(nomeParticipante)
+            tempoCorredores.push(0)
+            voltasCorredores.push([])
         } else {
             alert("Corrida cheia!")
         }
     }
 
 </script>
+
 </html>
